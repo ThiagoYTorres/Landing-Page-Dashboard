@@ -1,0 +1,77 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color:#221F26;
+}
+.logo{
+    color: #2D7DFF;
+}
+.hamb{
+    margin-top: 15px;
+    width: 20px;
+    border-top: 2px solid;
+    align-self: flex-start;
+    color: aliceblue;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    justify-content: center;
+    gap: 35px;
+    height: 100vh;
+    position: relative;
+    padding: 0px 2.3rem;
+}
+.title{
+    font-size: 3rem;
+    line-height: 89%;
+}
+p{
+    font-size: 1.5rem;
+    line-height: 111%;
+    font-weight: 275;
+    color: #8f8996;
+}
+button{
+    width: 220px;
+    padding: 10px 0px;
+    align-self: flex-start;
+    border: solid 0.5px #4D4D4D;
+    color: aliceblue;
+    background-color:#221F26;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+section::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/fundo.png');
+    background-size: cover;
+    background-position: 88%;
+    
+}
+.title,p,button{
+    position: relative;
+    z-index: 2;
+}
+.hamb::after,.hamb::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: aliceblue;
+    margin-top: 5px;
+}
