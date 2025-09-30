@@ -7,18 +7,23 @@
 
 .nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 20px;
-    background-color:#221F26;
+    background-color:rgba(44, 41, 49, 1);
+    position: relative;
+    z-index: 3;
 }
 .logo{
     color: #2D7DFF;
+    align-self:flex-start;
 }
 .hamb{
+    position: absolute;
+    left: 2%;
+    
     margin-top: 15px;
     width: 20px;
     border-top: 2px solid;
-    align-self: flex-start;
     color: aliceblue;
 }
 section{
@@ -50,8 +55,16 @@ button{
     background-color:#221F26;
     font-weight: 700;
     font-size: 1.125rem;
+    transition: 0.3s;
 }
-section::after{
+button:hover{
+    background-color:aliceblue;
+    color: #221F26;
+}
+body{
+    position: relative;
+}
+body::after{
     content: '';
     position: absolute;
     left: 0;
@@ -60,7 +73,7 @@ section::after{
     height: 100%;
     background-image: url('img/fundo.png');
     background-size: cover;
-    background-position: 88%;
+    background-position: 100%;
     
 }
 .title,p,button{
@@ -74,4 +87,61 @@ section::after{
     height: 2px;
     background-color: aliceblue;
     margin-top: 5px;
+}
+.desktop{
+    display: none;
+}
+@media ( min-width:1280px) {
+    body{
+        display: flex;
+        
+    }
+    .hamb{
+        display: none;
+    }
+    .desktop{
+        display: block;
+        background-color: rgb(36, 33, 40);
+        width:210px;
+        padding-top: 7%;
+        padding-left: 0.5%;
+        border-right: #2D7DFF 1px;
+        z-index: 3;
+    }
+    .navdesk{
+        list-style: none;
+        color: aliceblue;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    li{
+        padding: 10px;
+        transition: 0.3s;
+    }
+    li:hover{
+        background-color: #2D7DFF;
+    }
+    .nav{
+        display: none;
+    }
+    .title::before{
+        content: 'LOGO';
+        display: block;
+        margin-bottom: 35px;
+        color:  #2D7DFF;
+        font-size: 2rem;
+        z-index: 4;
+    }
+    section{
+        justify-content: flex-start;
+        padding-top: 10%;
+        padding-left: 7%;
+    }
+    .title{
+        font-size: 6rem;
+        width: 400px;
+    }
+    p{
+        font-size: 3rem;
+    }
 }
